@@ -1,4 +1,4 @@
-# codemanser-app
+# facebook-app-gif
 
 ## Project setup
 ```
