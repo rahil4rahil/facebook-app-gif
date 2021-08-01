@@ -1,5 +1,5 @@
 <template>
-  <button class="custom-input-button my-auto text-start">{{ placeholder }}</button>
+  <button class="custom-input-button my-auto text-start" @click="clickHandle">{{ placeholder }}</button>
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
     placeholder: {
       default: "Search",
       type: String,
+    },
+    clickHandle: {
+      default: () => console.log("SearchInputButton Clicked!"),
+      type: Function
     }
   },
   data: () => {

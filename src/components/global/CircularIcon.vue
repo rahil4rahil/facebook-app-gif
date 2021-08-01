@@ -1,5 +1,5 @@
 <template>
-	<a :href="logoData.navLink" ><img :src="logoData.imgUrl" alt="facebook-logo" height="40px" class="circular" /></a>
+	<a @click="clickHandler"><img :src="logoData.imgUrl" alt="facebook-logo" :height="height" class="circular" /></a>
 </template>
 
 <script>
@@ -10,6 +10,14 @@ export default {
       default: { imgUrl: require("@/assets/Facebook-logo.png"), navLink: "/" },
       type: Object,
     },
+    clickHandler: {
+      default:() => this.$route.push({path:'/'}),
+      type: Function
+    },
+    height: {
+      default: "40px",
+      type: String
+    }
   },
 };
 </script>
@@ -17,5 +25,7 @@ export default {
 <style >
   .circular {
     border-radius: 50%;
+    cursor: pointer;
+
   }
 </style>

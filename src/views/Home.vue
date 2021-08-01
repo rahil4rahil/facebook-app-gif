@@ -15,7 +15,8 @@
       <b-col cols="3" >
         <RightMenuWrapper />
       </b-col>
-    </b-row>    
+    </b-row>
+    <GenericDialog />
   </b-container>
 </template>
 
@@ -26,6 +27,7 @@ export default {
     HeaderContainer: () => import("@/components/header/HeaderContainer.vue"),
     RightMenuWrapper: () => import("@/views/RightMenuWrapper.vue"),
     LeftMenuWrapper: () => import("@/views/LeftMenuWrapper.vue"),
+    GenericDialog: () => import("@/components/global/GenericDialog.vue")
   },
 };
 </script>
@@ -41,5 +43,9 @@ export default {
 }
 .header-margin-top {
   margin-top: 60px;
+}
+.side-menu-wrapper {
+  min-width: 270px;
+  max-width: 270px;
 }
 </style>

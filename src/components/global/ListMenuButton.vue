@@ -1,7 +1,7 @@
 <template>
   <b-list-group-item class="custom-list-menu text-start" >
     <img class="custom-circular-image" height="30px" :src="menuData.imgUrl" alt="" />
-    <span class="custom-menu-label">{{ menuData.label}}</span>
+    <span class="custom-menu-label text-truncate">{{ menuData.label}}</span>
   </b-list-group-item>
 </template>
 

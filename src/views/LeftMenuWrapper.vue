@@ -1,5 +1,5 @@
 <template>
-  <b-container class="px-0 mt-3">
+  <b-container class="px-0 mt-3 side-menu-wrapper">
     <b-row>
       <b-col>
         <b-list-group>

@@ -6,7 +6,7 @@
           <CircularIcon :logoData="iconData" />
         </b-col>
         <b-col cols="11" >
-          <SearchInputButton placeholder="What's on your mind, Rahil?" />
+          <SearchInputButton placeholder="What's on your mind, Rahil?" :clickHandle="openCreatePostDialog" />
         </b-col>
       </b-row>
       <b-row>
@@ -57,6 +57,11 @@ export default {
           color:"rgb(247,185,40)"
         },
       ]
+    }
+  },
+  methods: {
+    openCreatePostDialog() {
+      this.$globalEventBus.$emit('openGenericDialog', { componentName:"CreatePostDialogContent", title: "Create Post" })
     }
   }
 }

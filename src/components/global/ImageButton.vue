@@ -1,8 +1,8 @@
 <template>
   <div class="button-container"> 
-    <b-list-group-item class="custom-list-menu text-center" >
+    <b-list-group-item class="custom-list-menu text-center text-truncate" >
       <i :class="buttonData.imgClass" :style="`color:${buttonData.color}`"></i>
-      <span class="custom-menu-label">{{buttonData.label}}</span>
+      <span class="custom-menu-label text-truncate">{{buttonData.label}}</span>
   </b-list-group-item>
   </div>
 </template>
