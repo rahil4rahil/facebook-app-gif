@@ -12,6 +12,8 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
+Vue.prototype.$globalEventBus = new Vue()
+
 new Vue({
   router,
   store,
