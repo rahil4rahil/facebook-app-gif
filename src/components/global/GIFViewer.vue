@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="content-gif" width="100%" :src="imgUrl" alt="" @click="addGIFToPost(gifData)">
+    <img class="content-gif" width="100%" :src="imgUrl" alt="" @click="addGIFToPost()">
   </div>
 </template>
 <script>
@@ -14,8 +14,13 @@ export default {
       },  
       type: Object
     },
-    imgUrl: "",
-    
+    data() {
+      return {
+        imgUrl: "https://media.giphy.com/media/2QnAUzL2KclxRDxp9Q/giphy.gif"
+      }
+    }
+  },
+  mounted() {
   },
   watch: {
     gifData: {
@@ -25,7 +30,16 @@ export default {
         this.imgUrl = `https://media.giphy.com/media/${data.id}/giphy.gif`
       }
     }
-  }
+  },
+  methods: {
+    addGIFToPost() {
+      this.$globalEventBus.$emit("switchComponent", { componentName:"CreatePostDialogContent", title: "Create Post", displayBackButton: false})
+      this.$nextTick(() => {
+        this.$globalEventBus.$emit("addGIFToPost", this.imgUrl)
+        console.log("event Emited")
+      })
+    }
+  },
 }
 </script>
 

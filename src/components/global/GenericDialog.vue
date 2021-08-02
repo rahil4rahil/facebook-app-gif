@@ -14,9 +14,11 @@
       <template #modal-header-close>
         <i class="fas fa-times"></i>
       </template>
-      <div class="custom-modal-body" style="overflow-x: hidden">
+      <div class="custom-modal-body" style="overflow-y: auto">
         <transition name="slide">
-          <component :is="componentData.componentName"></component>
+          <keep-alive>
+            <component :is="componentData.componentName"></component>
+          </keep-alive>
         </transition>
       </div>
     </b-modal>
@@ -62,9 +64,7 @@ export default {
       this.componentStack.push(Object.assign({}, this.componentData))
       this.componentData.title = data.title
       this.componentData.componentName = data.componentName
-      if (data.displayBackButton) {
-        this.componentData.displayBackButton = data.displayBackButton
-      }
+      this.componentData.displayBackButton = data.displayBackButton
     },
     loadPreviousComponent() {
       this.componentData = this.componentStack.pop()
@@ -109,7 +109,6 @@ button.close:hover {
   border: none;
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.5) 0px 0px 0px 1px inset;
-
 }
 .modal-header {
   padding: 10px 15px;
@@ -134,5 +133,6 @@ button.close:hover {
 .modal-body {
   padding: 0;
 }
+
 
 </style>

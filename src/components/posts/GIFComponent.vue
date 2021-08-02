@@ -9,7 +9,7 @@
         />
       </b-col>
     </b-row>
-    <b-row class="w-100 mx-0 content-gif-container">
+    <b-row class="w-100 mx-0 content-gif-container custom-scrollbar">
       <b-col class="mx-0 px-0">
         <GIFListWrapper v-if="gifList.length > 0" :gifList="gifList" />
       </b-col>
@@ -60,4 +60,6 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+
 </style>

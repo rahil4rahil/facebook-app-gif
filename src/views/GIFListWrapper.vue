@@ -16,12 +16,6 @@ export default {
       type: Array
     }
   },
-  // watch: {
-  //   gifList: {
-  //     deep: true,
-  //     handler() {}
-  //   }
-  // },
   mounted() {
 
   },
