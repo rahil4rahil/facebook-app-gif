@@ -3,7 +3,9 @@
     v-model="inputVal"
     type="text"
     :placeholder="placeholer"
-    class="custom-input my-auto mx-2"
+    class="custom-input my-auto"
+    :class="fullWidth ? 'w-100' : ''"
+    @input="changeHandler"
   />
 </template>
 
@@ -19,6 +21,14 @@ export default {
       default: "text",
       type: String,
     },
+    fullWidth: {
+      default: false,
+      type: Boolean
+    },
+    changeHandler: {
+      default: function () { console.log("Fetch") },
+      type: Function
+    }
   },
   data: () => {
     return {

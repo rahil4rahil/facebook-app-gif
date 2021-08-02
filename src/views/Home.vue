@@ -43,6 +43,7 @@ export default {
 }
 .header-margin-top {
   margin-top: 60px;
+  background-color: rgb(240, 242, 245);
 }
 .side-menu-wrapper {
   min-width: 270px;

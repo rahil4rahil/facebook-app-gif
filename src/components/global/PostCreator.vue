@@ -28,6 +28,7 @@ export default {
     CircularIcon: () => import("@/components/global/CircularIcon.vue"),
     SearchInputButton: () => import("@/components/global/SearchInputButton.vue"),
     ImageButton: () => import("@/components/global/ImageButton.vue"),
+    PostImageContainer: () => import('@/components/global/PostImageContainer')
   },
   data() {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <b-container class="px-0" >
+  <b-container class="px-3 py-3">
     <b-row>
       <b-col>
         <b-form-textarea v-model="textInput" ref="searchRef" type="textarea" class="custom-input-area w-100" size="lg" rows="3" max-rows="8" placeholder="Whats on your Mind, Rahil?" /> 
@@ -31,7 +31,7 @@ export default {
   methods: {
     openGIFComponent() {
       console.log("Open GIF Dialog")
-      this.$globalEventBus.$emit("switchComponent", {componentName:"GIFComponent", title: "Choose a GIF"})
+      this.$globalEventBus.$emit("switchComponent", { componentName:"GIFComponent", title: "Choose a GIF", displayBackButton: true})
     }
   }
 }

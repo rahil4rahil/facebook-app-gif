@@ -1,7 +1,7 @@
 <template>
   <b-list-group-item class="custom-list-menu text-start" >
     <img class="custom-circular-image" height="30px" :src="menuData.imgUrl" alt="" />
-    <span class="custom-menu-label text-truncate">{{ menuData.label}}</span>
+    <div class="custom-menu-label text-truncate">{{ menuData.label}}</div>
   </b-list-group-item>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   background: transparent;
   margin-left: 10px;
   cursor: pointer;
+  display: flex;
 }
 
 .custom-list-menu:hover {
@@ -40,6 +41,7 @@ export default {
 .custom-list-menu .custom-menu-label {
   font-weight: 600;
   font-size: 14px;
+  margin: auto 0;
 }
 
 </style>

@@ -1,14 +1,22 @@
 <template>
   <div>
     <b-modal ref="genericModal" hide-footer centered >
-      <template #modal-title class="text-center">{{title}}
+      <template #modal-title class="text-center">
+        <span v-if="componentData.displayBackButton">
+          <button class="close" @click="loadPreviousComponent">
+            <i class="fas fa-arrow-left"></i>     
+          </button>
+        </span>
+        <span class="mx-auto">
+          {{componentData.title}}
+        </span>
       </template>
       <template #modal-header-close>
         <i class="fas fa-times"></i>
       </template>
-      <div style="overflow-x: hidden">
+      <div class="custom-modal-body" style="overflow-x: hidden">
         <transition name="slide">
-          <component :is="componentName"></component>
+          <component :is="componentData.componentName"></component>
         </transition>
       </div>
     </b-modal>
@@ -25,8 +33,12 @@ export default {
   },
   data() {
     return {
-      componentName:"",
-      title: "Generic Dialog"
+      componentStack: [],
+      componentData: {
+        componentName:"",
+        title: "Generic Dialog",
+        displayBackButton: false
+      }
     }
   },
   mounted() {
@@ -37,8 +49,8 @@ export default {
   methods: {
     openGenericDialog(data) {
       console.log("Dialog Opened: ", data)
-      this.title = data.title
-      this.componentName = data.componentName
+      this.componentData.title = data.title
+      this.componentData.componentName = data.componentName
       this.$refs.genericModal.show('genericModal')
     },
     closeGenericDialog() {
@@ -46,9 +58,16 @@ export default {
       this.$refs.genericModal.hide('bv-modal-example')
     },
     switchComponent(data) {
-      console.log(`Dialog Switch Component from ${this.componentName} --> ${data.componentName}`)
-      this.title = data.title
-      this.componentName = data.componentName
+      console.log(`Dialog Switch Component from ${ this.componentData.componentName } --> ${ data.componentName }`)
+      this.componentStack.push(Object.assign({}, this.componentData))
+      this.componentData.title = data.title
+      this.componentData.componentName = data.componentName
+      if (data.displayBackButton) {
+        this.componentData.displayBackButton = data.displayBackButton
+      }
+    },
+    loadPreviousComponent() {
+      this.componentData = this.componentStack.pop()
     }
   },
   
@@ -81,6 +100,11 @@ button.close:hover {
   background: rgba(255,255,255, .5);
 }
 
+.modal-title {
+    display: flex;
+    width: 100%;
+}
+
 .modal-content {
   border: none;
   outline: none;
@@ -90,10 +114,12 @@ button.close:hover {
 .modal-header {
   padding: 10px 15px;
 }
-.modal-title {
+.modal-componentData.title {
   margin: 0 auto;
   font-weight: 700;
   font-size: 20px;
+  width: 100%;
+  display: flex;
 }
 
 .slide-leave-active,
@@ -104,4 +130,9 @@ button.close:hover {
 .slide-leave-to {
   transform: translate(-100%, 0);
 }
+
+.modal-body {
+  padding: 0;
+}
+
 </style>
