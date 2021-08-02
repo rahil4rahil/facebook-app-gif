@@ -15,22 +15,22 @@ const routes = [
       {
         path:"/watch",
         name: 'Watch',
-        component: () => import('../views/TimelineWrapper.vue')
+        component: () => import('../views/main-content/MainContentWrapper.vue')
       },
       {
         path:"/marketplace",
         name: 'MarketPlace',
-        component: () => import('../views/TimelineWrapper.vue')
+        component: () => import('../views/main-content/MainContentWrapper.vue')
       },
       {
         path:"/groups",
         name: 'Group',
-        component: () => import('../views/TimelineWrapper.vue')
+        component: () => import('../views/main-content/MainContentWrapper.vue')
       },
       {
         path:"/gaming",
         name: 'Gaming',
-        component: () => import('../views/TimelineWrapper.vue')
+        component: () => import('../views/main-content/MainContentWrapper.vue')
       },
     ]
   },

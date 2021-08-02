@@ -5,6 +5,11 @@
         <PostCreator />
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <TimelineWrapper />
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
@@ -12,7 +17,8 @@
 export default {
   name: "MainContentWrapper",
   components: {
-    PostCreator: () => import('@/components/global/PostCreator.vue')
+    PostCreator: () => import('@/components/global/PostCreator.vue'),
+    TimelineWrapper: () => import('@/views/TimelineWrapper.vue')
   }
 }
 </script>
