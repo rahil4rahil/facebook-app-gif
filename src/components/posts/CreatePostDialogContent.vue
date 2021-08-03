@@ -23,7 +23,7 @@
   
     <b-row class="mx-3 my-3">
       <b-col class="px-0">
-        <button class="custom-post-button" color="rgb(24, 119, 242)">Post</button>
+        <button class="custom-post-button" color="rgb(24, 119, 242)" @click="addPostToList">Post</button>
       </b-col>
     </b-row>
   </b-container>
@@ -61,6 +61,16 @@ export default {
     },
     removeGIFFromPost() {
       this.imgUrl = null
+    },  
+    addPostToList() {
+      let newPost = {}
+      newPost.text = this.textInput
+      newPost.id = (Math.random() * 0xfffff * 1000000).toString(16);
+      newPost.img = this.imgUrl
+      this.$store.commit('addPostToList', newPost)
+      this.$nextTick(()=> {
+        this.$globalEventBus.$emit('closeGenericDialog')
+      })
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="button-container"> 
-    <b-list-group-item class="custom-list-menu text-center" >
+    <b-list-group-item class="custom-list-menu text-center py-2" >
       <i :class="buttonData.imgClass" :style="`color:${buttonData.color}`"></i>
       <span class="custom-menu-label text-truncate">{{buttonData.label}}</span>
   </b-list-group-item>
@@ -20,7 +20,7 @@ export default {
 </script>
 <style>
   .button-container .custom-list-menu {
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px 10px;
     align-items: center;
     justify-content: center;

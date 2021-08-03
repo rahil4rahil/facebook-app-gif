@@ -1,6 +1,6 @@
 <template>
    <b-card>
-    <b-container class="text-start px-0">
+    <b-container class="text-start px-3 py-3">
       <b-row>
         <b-col cols="1">
           <CircularIcon :logoData="iconData" />

@@ -5,9 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    postList: []
   },
   mutations: {
+    addPostToList: (state, newPost) => {
+      state.postList.splice(0, 0, newPost)
+    }
+  },
+  getters: {
+    getPostsList: ({postList}) => {
+      return postList
+    }
   },
   actions: {
      fetchGIFs: async ({state, commit}, data) => {
