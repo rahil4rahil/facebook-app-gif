@@ -1,6 +1,6 @@
 <template>
-  <b-card>
-    <b-container class="text-start px-0">
+  <b-card class="my-2">
+    <b-container class="text-start px-0 ">
       <b-row class="px-3 py-3 mx-0">
         <b-col class="px-0">
           <CircularIcon :logoData="iconData" />
@@ -47,7 +47,7 @@ export default {
           id: "shareButton1",
           navLink: "/", 
           imgClass:"far fa-thumbs-up", 
-          label:"Share", 
+          label:"Like", 
           color:"rgb(101, 103, 107)"
         },
         {

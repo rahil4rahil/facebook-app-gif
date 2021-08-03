@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 #app {
-  font-family: "Segoe UI Historic";
+  font-family: 'Segoe UI';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
