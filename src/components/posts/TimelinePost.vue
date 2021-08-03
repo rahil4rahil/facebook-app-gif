@@ -12,7 +12,7 @@
           <b-card-text>{{ postData.text }}</b-card-text>
         </b-col>
       </b-row>
-      <b-row >
+      <b-row v-if="postData.img" >
         <b-col>
           <img :src="postData.img" alt="img" width="100%">
         </b-col>
